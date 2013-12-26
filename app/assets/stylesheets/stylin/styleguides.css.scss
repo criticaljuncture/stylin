@@ -1,0 +1,107 @@
+$light-gray: #FEFEFE;
+$light-medium-gray: #F1F1F1;
+$medium-gray: #DDDDDD;
+$dark-gray: #333333;
+$black: #000000;
+$white: #FFFFFF;
+
+$styleguide-background: $light-gray;
+$styleguide-border: $medium-gray;
+
+$styleguide-header: $white;
+$styleguide-header-border: $black;
+$styleguide-header-background: $dark-gray;
+$styleguide-header-em: $white;
+
+$styleguide-description-border: $dark-gray;
+$styleguide-description-background: $light-medium-gray;
+
+$styleguide-element-border: $medium-gray;
+
+$styleguide-modifier-name: $black;
+$styleguide-modifier-name-background: $light-medium-gray;
+$styleguide-modifier-name-border: $medium-gray;
+
+.styleguide-example {
+  margin: 15px 0;
+  background-color: $styleguide-background;
+  border: 1px solid $styleguide-border;
+
+  & > h3 {
+    margin: 0;
+    padding: 5px;
+    color: $styleguide-header;
+    font-size: 12px;
+    text-transform: uppercase;
+    background: $styleguide-header-background;
+    border-top: 1px solid $styleguide-header-border;
+
+    em {
+      float: right;
+      text-transform: none;
+      font-style: normal;
+      font-weight: normal;
+      color: $styleguide-header-em;
+    }
+  }
+
+  .styleguide-description {
+    padding: 10px 5px;
+    background: $styleguide-description-background;
+    border-bottom: 1px solid $styleguide-description-border;
+
+    p:first-child { margin-top: 0; }
+    p:last-child { margin-bottom: 0; }
+  }
+
+  .styleguide-element + .styleguide-element {
+    margin-top: -5px;
+    padding-top: 15px;
+    border-top: 1px solid $styleguide-element-border;
+  }
+
+  .styleguide-element {
+    position: relative;
+    padding: 20px;
+
+    .styleguide-modifier-name {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 5px 8px;
+      font-size: 11px;
+      color: $styleguide-modifier-name;
+      background: $styleguide-modifier-name-background;
+      border: 1px solid $styleguide-modifier-name-border;
+      border-top: none;
+    }
+  }
+
+  .styleguide-html {
+    padding: 5px 10px;
+    background: #edf6f8;
+    border-top: 1px solid #dde7ea;
+    overflow: auto;
+
+    .highlight { background: none; }
+  }
+
+  ul.styleguide-modifiers {
+    margin: 0 0 0 10px;
+
+    li {
+      list-style-type: none;
+      margin-left: 0;
+
+      strong {
+        font-family: Monaco, monospace;
+        font-size: 12px;
+        font-weight: normal;
+        color: #222;
+      }
+    }
+  }
+
+  & > .styleguide-code { font-family: Monaco, monospace; }
+}

@@ -1,0 +1,5 @@
+<%= styleguide_navigation(@sections) %>
+
+<% styleguide.sections.each do |styleguide_version, section| %>
+  <%= render partial: "section", locals: {section: section} %>
+<% end %>

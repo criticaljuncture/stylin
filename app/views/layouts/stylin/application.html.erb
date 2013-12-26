@@ -2,13 +2,18 @@
 <html>
 <head>
   <title>Stylin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <%= stylesheet_link_tag    "stylin/application", media: "all" %>
   <%= javascript_include_tag "stylin/application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <div class="row">
+      <%= render partial: "layouts/stylin/navigation" %>
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
