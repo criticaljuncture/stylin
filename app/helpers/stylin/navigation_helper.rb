@@ -4,7 +4,7 @@ module Stylin
       elements = []
       sections.each do |section|
         elements << content_tag(:li,
-                                link_to(section, Styleguide.sluggify(section))
+                                link_to(section, styleguide_path(Styleguide.sluggify(section)) )
                                )
       end
 
