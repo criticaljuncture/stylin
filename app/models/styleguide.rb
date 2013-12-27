@@ -2,7 +2,7 @@ class Styleguide
   attr_reader :section_names, :styleguide
 
   def initialize
-    @styleguide ||= Kss::Parser.new( File.expand_path(Stylin::STYLESHEETS_PATH, Rails.root) )
+    @styleguide ||= Kss::Parser.new( Stylin::APP_CONFIG[:stylesheets_path] )
     @section_names ||= styleguide.sections.map{|s| s[1].section}.sort
   end
 

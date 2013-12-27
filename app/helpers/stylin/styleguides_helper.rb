@@ -18,7 +18,7 @@ module Stylin
     private
 
     def example_html_base_path
-      @example_html_base_path ||= File.expand_path( Stylin::HTML_STYLEGUIDES_PATH, Rails.root)
+      Stylin::APP_CONFIG[:html_styleguides_path]
     end
 
     def example_html_path(filename)
