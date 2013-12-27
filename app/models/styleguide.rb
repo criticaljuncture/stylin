@@ -1,16 +1,25 @@
 class Styleguide
-  attr_reader :sections, :styleguide
+  attr_reader :section_names, :styleguide
 
   def initialize
     @styleguide ||= Kss::Parser.new( File.expand_path(Stylin::STYLESHEETS_PATH, Rails.root) )
-    @sections ||= styleguide.sections.map{|s| s[1].section}.sort
+    @section_names ||= styleguide.sections.map{|s| s[1].section}.sort
   end
 
 
   def find(conditions)
     section = conditions.delete(:section)
+    section_group = conditions.delete(:section_group)
 
-    find_by_section(section) if section
+    if section_group.present?
+      find_grouped_sections(section_group)
+    elsif section.present?
+      find_by_section(section)
+    end
+  end
+
+  def build_section_hierarchy
+
   end
 
   def self.sluggify(section)
@@ -40,6 +49,18 @@ class Styleguide
 
   def find_by_section(section)
     styleguide.section(section)
+  end
+
+  def find_grouped_sections(section_group)
+    grouped_sections.select{|k,v| k.to_i == section_group}.values.flatten.map do |section_name|
+      find_by_section(section_name)
+    end
+  end
+
+  def grouped_sections
+    @grouped_sections ||= section_names.group_by do |x|
+      x.split('.')[0]
+    end
   end
 
   def self.is_integer?(string)

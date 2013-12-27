@@ -21,15 +21,35 @@ describe Styleguide do
     end
   end
 
+  describe "#section_names" do
+    it "returns sections in proper order" do
+      section_order = ['1.1 Buttons', '1.2 Forms']
+      expect( styleguide.section_names ).to eq( section_order )
+    end
+  end
+
   describe "#find" do
     let(:section_name) { '1.1 Buttons' }
 
-    it "returns a kss:section when a section is searched for" do
-      expect( styleguide.find(section: section_name) ).to be_kind_of(Kss::Section)
+    describe "section conditions" do
+      it "returns a kss:section when a section is searched for" do
+        expect( styleguide.find(section: section_name) ).to be_kind_of(Kss::Section)
+      end
+
+      it "returns the proper section" do
+        expect( styleguide.find(section: section_name).section ).to eq(section_name)
+      end
     end
 
-    it "returns the proper section" do
-      expect( styleguide.find(section: section_name).section ).to eq(section_name)
+    describe "section_group conditions" do
+      it "returns an array of sub sections for the section group searched for" do
+        section_group_1 = [styleguide.find(section: '1.1 Buttons'), styleguide.find(section: '1.2 Forms')]
+
+        expect( styleguide.find(section_group: 1) ).to eq(section_group_1)
+      end
     end
+  end
+
+  describe "#build_hierarchy" do
   end
 end
