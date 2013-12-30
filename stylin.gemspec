@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Stylin::VERSION
   s.authors     = ["Bob Burbach"]
   s.email       = ["bob@criticaljuncture.org"]
-  s.homepage    = "https://github.com/peregrinator/stylin"
+  s.homepage    = "https://github.com/criticaljuncture/stylin"
   s.summary     = "Rails engine for a living style guide."
   s.description = "Rails engine for a living style guide."
 
