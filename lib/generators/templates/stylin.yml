@@ -1,0 +1,7 @@
+#see README at http:github.com/criticaljuncture/stylin for configuration details
+
+#stylesheets_path: app/assets/stylesheets
+#html_styleguides_path: app/styleguides
+#section_groupings:
+#  1: Generic Elements
+#  2: Forms
