@@ -17,6 +17,8 @@ module Stylin
         File.read( File.expand_path(File.join('config', 'stylin.yml'), Rails.root) )
       )
     ).symbolize_keys
+  else
+    user_config = {}
   end
 
   APP_CONFIG = config.merge( user_config )
