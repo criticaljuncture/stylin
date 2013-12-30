@@ -6,6 +6,9 @@ for your application.
 Stylin builds on the work of KSS (http://github.com/kneath/kss) and adds
 default controllers and views so that you can get to work on features.
 
+[![Build Status](https://circleci.com/gh/criticaljuncture/stylin.png?circle-token=d7ed5d5bd181e9617a61090ada54c7ba1e5d8aa7)](https://circleci.com)
+
+
 # Installation
 
 * Add the stylin gem to your Gemfile and bundle
