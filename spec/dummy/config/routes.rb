@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-
-  mount Stylin::Engine => "/stylin"
+  mount Stylin::Engine => '/styleguides' if Rails.env.development?
 end
