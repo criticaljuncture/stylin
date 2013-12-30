@@ -1,4 +1,4 @@
-= Stylin
+# Stylin
 
 Stylin is a Rails engine that simplifies the setup of a living styleguide
 for your application.
