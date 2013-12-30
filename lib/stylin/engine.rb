@@ -8,5 +8,7 @@ module Stylin
       g.assets false
       g.helper false
     end
+
+    config.autoload_paths << File.expand_path("../lib/tasks/stylin_tasks.rake", __FILE__)
   end
 end
