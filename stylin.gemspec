@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails",           ">= 3.2.0"
-  s.add_development_dependency "sass-rails",      "~> 3.2.6"
-  s.add_development_dependency "bootstrap-sass",  "~> 3.0.3.0"
+  s.add_dependency "sass-rails",      "~> 3.2.6"
+  s.add_dependency "bootstrap-sass",  "~> 3.0.3.0"
   s.add_dependency "jquery-rails",    "~> 3.0.0"
   s.add_dependency "kss",             "~> 0.5.0"
 
