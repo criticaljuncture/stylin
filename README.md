@@ -17,9 +17,8 @@ gem "stylin", "~>0.0.1"
 ```
 
 * Install the gem.
-
 ```console
-rake generate stylin:install
+rails generate stylin:install
 ```
 
 This creates a 'stylin.yml' file under config/ that allows customization
